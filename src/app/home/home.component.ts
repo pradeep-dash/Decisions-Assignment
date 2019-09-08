@@ -12,11 +12,14 @@ export class HomeComponent implements OnInit {
   constructor(private productService: ProductService, private router: Router) { }
   tv = [];
   productsName = [];
+  buttonDisabled = false;
+  redirected = false;
+  productSelected = '';
 
   ngOnInit() {
     var names = sessionStorage.getItem('productsName');
     this.productsName = names == null ? [] : names.split(',');
-    console.log(this.productsName);
+
     if (!this.productsName.length) {
       this.productService.getProducts().subscribe(
         data => {
@@ -29,6 +32,10 @@ export class HomeComponent implements OnInit {
   }
 
   addProduct(product) {
+    this.buttonDisabled = true;
+    this.redirected = true;
+    this.productSelected = product;
+    
     var productDetails = JSON.parse(sessionStorage.getItem('products'));
     this.productService.products(productDetails.filter(obj => obj.name === product)[0].definitionUrl).subscribe(
       data => {
