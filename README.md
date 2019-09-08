@@ -3,8 +3,6 @@
 2. As this is an angular project, node modules should be installed before running the project. [ npm install ]
 3. After installing the node modules, run the project. [ ng serve --open]
 
-# Decisions
-
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.3.
 
 ## Development server
