@@ -1,0 +1,19 @@
+.invalid {
+    border-color: #dc3545;
+    box-shadow: none;
+}
+
+.form-div {
+    background-color: whitesmoke;
+    border-radius: 10px;
+}
+
+.h2-style {
+    margin-left: -16px;
+    margin-right: -16px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    text-align: center;
+    background-color: #ff5e00b0;
+    color: #077171;
+}
