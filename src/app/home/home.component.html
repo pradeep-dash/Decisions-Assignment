@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-md-2 offset-md-5">
         <div class="mt-5" style="text-align: center">
-            <h3 *ngIf="!productsName.length" style="color: red">Please Wait</h3>
+            <h3 *ngIf="!productsName.length" style="color: red">Fetching</h3>
             <div *ngFor="let productName of productsName">
                 <button class="btn btn-warning" [disabled]="buttonDisabled" (click)="addProduct(productName)">
                     <span style="color: white; font-weight: 600">Add {{productName}}</span>

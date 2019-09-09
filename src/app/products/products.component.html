@@ -2,7 +2,7 @@
     <div class="col-md-4 offset-md-4">
         <div class="mt-5 form-div">
             <form #productForm="ngForm" (ngSubmit)="productForm.form.valid && onSubmit()" novalidate class="mt-3 ml-3 mr-3">
-                <h2 class="h2-style">{{view | titlecase}} Insertion Form</h2>
+                <h2 class="h2-style">{{view}} Insertion Form</h2>
 
                 <div *ngFor="let input of inputs; let i = index">
                     <div class="form-group" *ngIf="input.type === 'text'">

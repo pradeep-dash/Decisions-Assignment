@@ -11,11 +11,13 @@ export class ProductsComponent implements OnInit {
   constructor(private route: ActivatedRoute) { }
   view = '';
   inputs;
-  name = "";
 
   ngOnInit() {
-    this.view = this.route.snapshot.paramMap.get('id');
-    this.inputs = JSON.parse(sessionStorage.getItem(this.view));
+    var param = this.route.snapshot.paramMap.get('id');
+    var products = JSON.parse(sessionStorage.getItem('products'));
+    
+    this.view = products.filter(obj => obj.name.toLowerCase()  === param)[0].name
+    this.inputs = JSON.parse(sessionStorage.getItem('productDetails'));
   }
 
   onSubmit() {

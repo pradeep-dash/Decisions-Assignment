@@ -36,11 +36,11 @@ export class HomeComponent implements OnInit {
     this.redirected = true;
     this.productSelected = product;
     
-    var productDetails = JSON.parse(sessionStorage.getItem('products'));
-    this.productService.products(productDetails.filter(obj => obj.name === product)[0].definitionUrl).subscribe(
+    var products = JSON.parse(sessionStorage.getItem('products'));
+    this.productService.products(products.filter(obj => obj.name   === product)[0].definitionUrl).subscribe(
       data => {
-        sessionStorage.setItem(product, JSON.stringify(data));
-        this.router.navigate(["product-insert", product]);
+        sessionStorage.setItem('productDetails', JSON.stringify(data));
+        this.router.navigate(["product-insert", product.toLowerCase()]);
       }
     );
   }
